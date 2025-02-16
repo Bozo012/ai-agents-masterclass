@@ -37,7 +37,7 @@ x-ollama: &service-ollama
 x-init-ollama: &init-ollama
   image: ollama/ollama:latest
   networks: ['demo']
-  container_name: ollama-pull-deepseek-r1:32b
+  container_name: ollama-pull-deepseek
   volumes:
     - ollama_storage:/root/.ollama
   entrypoint: /bin/sh
