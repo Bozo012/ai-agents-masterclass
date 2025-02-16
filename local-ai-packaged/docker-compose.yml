@@ -37,13 +37,13 @@ x-ollama: &service-ollama
 x-init-ollama: &init-ollama
   image: ollama/ollama:latest
   networks: ['demo']
-  container_name: ollama-pull-llama
+  container_name: ollama-pull-deepseek-r1:32b
   volumes:
     - ollama_storage:/root/.ollama
   entrypoint: /bin/sh
   command:
     - "-c"
-    - "sleep 3; OLLAMA_HOST=ollama:11434 ollama pull llama3.1; OLLAMA_HOST=ollama:11434 ollama pull nomic-embed-text"
+    - "sleep 3; OLLAMA_HOST=ollama:11434 ollama pull deepseek-r1:32b; OLLAMA_HOST=ollama:11434 ollama pull nomic-embed-text"
 
 services:
   flowise:
